@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+
+  <div class="container-md">
+    <table class="table mx-auto" style="width: 40%;">
+      <thead>
+        <tr>
+          <th class="text-white text-center mx-auto" style="width: 5%; border: 0px;"></th>
+          <th class="text-white text-center mx-auto" style="width: 5%;">#</th>
+          <th class="text-white text-center mx-auto" style="width: 20%;">username</th>
+          <th class="text-white text-center mx-auto" style="width: 5%;">score</th>
+          <th class="text-white text-center mx-auto" style="width: 5%; border: 0px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in user_data %}
+        <tr>
+          <td class="text-center" style="border: 0px;">{% if user.user_id == request.user_id %} <span class="badge text-bg-light">You</span>{% endif %}</td>
+          <td class="text-white text-center">{{ forloop.counter }}</td>
+          <td class="text-white text-center">{{ user.username }}</td>
+          <td class="text-white text-center">{{ user.score }}</td>
+          <td class="text-center" style="border: 0px;"></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <div class="col-lg-12 text-center">
+    <a type="button" class="btn btn-outline-light" style="width: 15%;" href="{% url 'game_view' %}">Play</a>
+  </div>
+
+  <br>
+{% endblock %}

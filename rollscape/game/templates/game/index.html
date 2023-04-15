@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <br>
+
+  <div class="text-center">
+    <canvas id="canvas" style="border: 1px solid white; height: 70vh; width: 20%"></canvas>
+  </div>
+
+  <br>
+
+  <div class="col-lg-12 text-center">
+    <button class="btn btn-outline-light" style="width: 7.5%;" onclick="restartGame();">Restart</button>
+    <a class="btn btn-outline-light position-relative" style="width: 7.5%;" href="{% url 'main_page' %}">Back<div id="award_body"></div></a>
+  </div>
+
+  <br>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>const csrf_token = '{{ csrf_token }}';</script>
+  <script>const update_url = {% url 'update_score' %};</script>
+  <script src="{% static 'game/game.js' %}"></script>
+{% endblock %}
