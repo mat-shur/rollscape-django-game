@@ -8,7 +8,7 @@ This is a hyper-casual "time-killer" game, which was developed using Django tech
 
 - Cookie-based auto-registration
 
-## Features
+## Technologies
 
 - Python 3x
 - Django 4.2
@@ -60,7 +60,8 @@ Run on browser:
 
 
 ## Screenshots
-
+Table:
 ![Table](/Screenshots/table.jpg?raw=true "Table")
+Game:
 ![Game](/Screenshots/game.jpg?raw=true "Game")
 
