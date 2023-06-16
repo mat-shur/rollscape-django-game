@@ -43,7 +43,7 @@ Go to the project directory:
 Run migrations:
 
 ```bash
-  python manage.py makemigrations
+  python manage.py migrate
 ```
 
 Start the server:
